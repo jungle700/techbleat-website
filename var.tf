@@ -20,7 +20,7 @@ variable "aws_key_name" {
 variable "amis" {
   type = map(string)
   default = {
-    "eu-west-1" = "ami-0ea3405d2d2522162"
+    "eu-west-1" = "ami-06fd8a495a537da8b"
   }
 
 }

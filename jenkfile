@@ -1,0 +1,36 @@
+
+
+pipeline {
+   agent any
+
+ 
+
+   stages {
+        
+      stage('Validation') {
+         steps {
+            sh 'rm -r techbleat || true' 
+
+            
+            sh 'git clone https://github.com/jungle700/techbleat-website.git'
+         }
+      }
+
+     stage('checkout') {
+
+          environment { 
+                AWS_ACCESS_KEY_ID = credentials('ACCESS_KEY') 
+                AWS_SECRET_ACCESS_KEY = credentials('SECRET_KEY') 
+                
+            }
+         steps {
+            
+            sh ' sudo cp index.html  /usr/share/nginx/html'
+            sh ' sudo cp devops.jpg /usr/share/nginx/html'
+
+         }
+      }
+
+   }
+
+}

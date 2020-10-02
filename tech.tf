@@ -6,7 +6,7 @@ resource "aws_instance" "terra" {
   key_name      = var.aws_key_name
   user_data     = data.template_file.myuserdata.template
   vpc_security_group_ids = ["${aws_security_group.ngi-group.id}"]
-  subnet_id = "${aws_subnet.default.id}" 
+  subnet_id = aws_subnet.default.id 
   associate_public_ip_address = true
 
 
@@ -33,4 +33,13 @@ resource "aws_key_pair" "tkay" {
 
   public_key = file(var.path_to_public_key)
 
+}
+
+
+terraform {
+  backend "s3" {
+    bucket = "my-tff-dev001"
+    key    = "dev/terraform.tfstate"
+    region = "eu-west-1"
+  }
 }
