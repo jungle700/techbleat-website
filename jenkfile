@@ -9,7 +9,7 @@ pipeline {
         
       stage('Validation') {
          steps {
-            sh 'rm -r techbleat || true' 
+            sh 'rm -r techbleat-website || true' 
 
             
             sh 'git clone https://github.com/jungle700/techbleat-website.git'
