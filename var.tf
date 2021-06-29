@@ -5,7 +5,8 @@ variable "aws_region" {
 
 variable "path_to_public_key" {
 
-  default = "~/devops/terrapro/project2/tkay.pub"
+  default = "./myreal.pub"
+
 
 }
 
@@ -14,7 +15,7 @@ variable "instance_type" {
 }
 
 variable "aws_key_name" {
-  default = "tkay"
+  default = "myreal"
 }
 
 variable "amis" {
