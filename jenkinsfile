@@ -19,7 +19,7 @@ pipeline {
          }
       }
 
-       stage('copy html') {
+       stage('copy now html') {
          steps {
             sh ' sudo cp index.html  /usr/share/nginx/html'
          }
