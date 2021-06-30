@@ -1,5 +1,3 @@
-
-
 pipeline {
    agent any
 
@@ -11,21 +9,27 @@ pipeline {
          steps {
             sh 'rm -r techbleat-website || true' 
 
-            
-            sh 'git clone https://github.com/jungle700/techbleat-website.git'
          }
       }
 
-      stage('checkout') {
+      stage('copy ') jpg{
 
-          environment { 
-                AWS_ACCESS_KEY_ID = credentials('ACCESS_KEY') 
-                AWS_SECRET_ACCESS_KEY = credentials('SECRET_KEY') 
-                
-            }
+         
          steps {
 
             sh ' sudo cp devops.jpg /usr/share/nginx/html'
+         
+           
+
+         }
+      }
+
+       stage('copy html') {
+
+         
+         steps {
+
+            
             sh ' sudo cp index.html  /usr/share/nginx/html'
            
 
