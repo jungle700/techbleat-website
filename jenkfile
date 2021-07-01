@@ -25,8 +25,8 @@ pipeline {
             }
          steps {
 
-            sh ' sudo cp devops.jpg /usr/share/nginx/html'
-            sh ' sudo cp index.html  /usr/share/nginx/html'
+            sh ' sudo cp devops.jpg /var/www/html'
+            sh ' sudo cp index.html  /var/www/html'
            
 
          }
